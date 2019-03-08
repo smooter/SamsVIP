@@ -1,0 +1,17 @@
+version: '3.2'
+services:
+  samscheck:
+    image: samscheck:latest
+    build:
+      context: ../python
+#    logging:
+#      driver: syslog
+#      options:
+#        syslog-facility: syslog
+#        tag: "samscrack"
+    networks:
+      - default
+    command: python cr4ck.py
+
+networks:
+  default:
